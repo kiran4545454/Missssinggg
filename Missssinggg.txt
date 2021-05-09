@@ -1,0 +1,47 @@
+/*   for this MISSING NUMBER in c# program we can find out missing number using two method
+  
+  Method 1 =(using sum formula)   
+  Method 2 =(using XOR)
+  
+  in Method 1 ,if the sum of the number goes beyond maximum allow integer,
+    there can be integer overflow then we may not get correct answer.
+  
+  in Method 2  , in here we can not face such problem like Method 1
+  so the Method 2 is best
+ */
+ // XOR creation properties
+ // create two variable a=0 & b=0
+ // run a loop from 1 to n with i as counter.
+ // Traverse the Array from start to end 
+ //  for every index updat b as b=b^array[i]
+ // print the missing number as a^b
+  
+  
+// C# program to find missing Number
+// using XOR 
+// C# program to find missing Number
+using System;
+
+class Missssinggg
+ {
+	// Function to ind missing number
+	static int getMissingNo(int[] a, int n)
+	{
+		int total = (n + 1) * (n + 2) / 2;
+
+		for (int i = 0; i < n; i++)
+			total -= a[i];
+
+		return total;
+	}
+
+	/* program to test above function */
+	public static void Main()
+	{
+		int[] a = { 1, 2, 4, 5, 6 };
+		int miss = getMissingNo(a, 5);
+		Console.Write(miss);
+	}
+}
+
+
